@@ -32,10 +32,41 @@
     <aside class="offcanvas-aside">
 
         <!-- Contact -->
-        <section id="contact">
-            <h4>Contact Me</h4>
-        </section>
+        <div class="contact-container">
+            <div class="fcf-body">
 
+                <div id="fcf-form">
+                    <h3 class="fcf-h3">Contact us</h3>
+
+                    <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+                        <div class="fcf-form-group">
+                            <label for="Email" class="fcf-label">Your email address</label>
+                            <div class="fcf-input-group">
+                                <input type="email" id="Email" name="Email" class="fcf-form-control" placeholder="name@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="fcf-form-group">
+                            <label for="Subject" class="fcf-label">Subject</label>
+                            <div class="fcf-input-group">
+                                <input type="text" id="Subject" name="Subject" class="fcf-form-control" placeholder="Type subject here.." required>
+                            </div>
+                        </div>
+
+
+                        <div class="fcf-form-group">
+                            <label for="Message" class="fcf-label">Your message</label>
+                            <div class="fcf-input-group">
+                                <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" placeholder="Type message here.." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="fcf-form-group">
+                            <button type="submit" id="fcf-button" onclick="sendMsg()" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
     </aside>
 
     <!-- Navigation -->
@@ -57,7 +88,7 @@
                         <a class="nav-link js-scroll-trigger" href="#me">Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                        <a class="nav-link js-scroll-trigger" href="#contact" onclick="openCanvas()">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -119,7 +150,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">My Project</h2>
-                    <h3 class="section-subheading text-muted">Enjoy from some of my works</h3>
+                    <h3 class="section-subheading text-muted">Enjoy from my work</h3>
                 </div>
             </div>
             <div class="row projs-container">
@@ -209,40 +240,9 @@
 
     <!-- Modal 1 -->
     <div class="details-container">
-
-    </div>
-    <!-- <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body"> -->
-    <!-- Project Details Go Here -->
-    <!-- <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                                <p></p>
-                                <ul class="list-inline">
-                                    <li>Date: January 2017</li>
-                                    <li>Client: Threads</li>
-                                    <li>Category: Illustration</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fa fa-times"></i>
-                                Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
         </div>
-    </div> -->
+    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -255,6 +255,8 @@
     <!-- Custom scripts for this template -->
     <script src="js/storage-service.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/porj-service.js"></script>
+    <script src="js/contact-us.js"></script>
     <script src="js/ca-gallery.js"></script>
     <script src="js/offCanvas.js"></script>
     <script src="js/main.js"></script>

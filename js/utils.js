@@ -1,4 +1,7 @@
 'use strict'
+const gMonths = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
 
 function makeId(length = 6) {
     var txt = '';
@@ -31,5 +34,6 @@ function getDate() {
 
 function makeDate(time) {
     var newTime = new Date(time)
-    return (newTime.getMonth() + 1) + '-' + newTime.getDate() + ' ' + newTime.getHours() + ":" + newTime.getMinutes();
+    var month = gMonths[newTime.getMonth() + 1]
+    return (month + ' ' + newTime.getFullYear());
 }
